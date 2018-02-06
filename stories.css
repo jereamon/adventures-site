@@ -1,0 +1,121 @@
+/* Universal Selectors */
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    font-family: "Montserrat";
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: rgba(75, 53, 19, 0.25);
+  }
+
+  h1 {
+    font-weight: normal;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgb(150, 150, 150);
+    border-radius: 3px;
+  }
+/* Universal Selectors End */
+
+/* Nav Portion */
+  nav {
+    background: #1A3249;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  nav a {
+    border: solid grey 1px;
+    border-radius: 3px;
+    color: white;
+    padding: 7.5px 15px;
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    background: rgb(68, 109, 150);
+  }
+
+  nav ul {
+    height: 100%;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    width: 49.5%;
+  }
+
+  nav li {
+    display: inline-block;
+    height: 100%;
+    margin: 16px 2% 0;
+  }
+
+  .brand {
+    border: none;
+    border-radius: none;
+    color: white;
+    float: left;
+    font-size: 1.5rem;
+    margin: 10px 0 0 8.25%;
+    padding: 0;
+  }
+
+  .brand:hover {
+    background: none;
+  }
+/* End Nav Portion */
+
+/* Content Starts */
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 100px auto;
+    width: 82.5%;
+  }
+
+  .story-container {
+    background-color: rgba(150, 119, 68, 0.25);
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.33);
+    flex-basis: 45%;
+    margin: 0 0 40px 0;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .story-container img {
+    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.33);
+    max-width: 100%;
+  }
+
+  .link-container {
+    margin: 40px 0;
+  }
+
+  .read-more {
+    background: #1A3249;
+    border: solid 1px white;
+    border-radius: 3px;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+  }
+
+  .read-more:hover {
+    background: rgb(68, 109, 150);
+  }
+/* Content Ends */

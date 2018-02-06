@@ -1,0 +1,225 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Montserrat";
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("about-photos/me-lookout-2.jpg");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  /* height: 100%; */
+}
+
+h1 {
+  font-weight: normal;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(150, 150, 150);
+  border-radius: 3px;
+}
+
+/* Nav Portion */
+  nav {
+    background: #1A3249;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  nav a {
+    border: solid grey 1px;
+    border-radius: 3px;
+    color: white;
+    padding: 7.5px 15px;
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    background: rgb(68, 109, 150);
+  }
+
+  nav ul {
+    height: 100%;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    width: 49.5%;
+  }
+
+  nav li {
+    display: inline-block;
+    height: 100%;
+    margin: 16px 2% 0;
+  }
+
+  .brand {
+    border: none;
+    border-radius: none;
+    color: white;
+    float: left;
+    font-size: 1.5rem;
+    margin: 10px 0 0 8.25%;
+    padding: 0;
+  }
+
+  .brand:hover {
+    background: none;
+  }
+/* End Nav Portion */
+
+/* Content Starts */
+  .content-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-row-gap: 150px;
+    justify-items: center;
+    margin: 8.25% 0 0;
+    width: 66%;
+  }
+
+  .container {
+    color: white;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .container h1 {
+    font-weight: normal;
+    font-size: 3rem;
+    text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5), 1px 1px 3px rgba(0, 0, 0, 0.75);
+  }
+
+  .container h2 {
+    font-weight: normal;
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5), 1px 1px 3px rgba(0, 0, 0, 0.75);
+  }
+
+  .container p {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5)
+  }
+/* Content Ends */
+
+/* Media Queries Start */
+  @media (max-width:1800px) {
+    .content-container {
+      grid-row-gap: 60px;
+      /* margin: 50px 0 0; */
+    }
+
+    .container h1 {
+      font-size: 2.5rem
+    }
+
+    .container h2 {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width:1100px) {
+    .content-container {
+      margin: 50px 0 0;
+      /* grid-template-rows: 300px 300px; */
+      grid-row-gap: 0;
+    }
+
+    .container h1 {
+      font-size: 1.75rem
+    }
+
+    .container h2 {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media (max-width:800px) {
+    body {
+      background-image: url('about-photos/me-lookout-portrait.jpg');
+    }
+
+    ::-webkit-scrollbar {
+      width: 0;
+    }
+
+    /* HELLA NAV CHANGES */
+      .burger-container {
+        height: 50px;
+        position: fixed;
+        right: 8.25%;
+        top: 5px;
+      }
+
+      .bar1, .bar2, .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: rgba(255, 255, 255, 0.637);
+        margin: 6px 0;
+        transition: 0.4s;
+      }
+
+      .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-9px, 6px);
+      }
+
+      .change .bar2 {opacity: 0;}
+
+      .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
+      }
+
+      nav {
+        width: 100%;
+      }
+
+      nav ul {
+        display: block;
+        height: 0;
+        margin: 50px 0 0;
+        overflow: hidden;
+        position: fixed;
+        right: 0;
+        transition: 330ms;
+        width: 100%;
+      }
+
+      nav li {
+        align-items: center;
+        background-color: black;
+        border-top: solid white 1px;
+        display: flex;
+        justify-content: flex-end;
+        height: 50px;
+        margin: 0;
+        text-align: right;
+        width: 100%;
+      }
+
+      nav a {
+        border: none;
+        border-radius: 0;
+      }
+
+      .nav-open {
+        /* Class applied in js file to show nav */
+        height: 150px;
+      }
+    /* Nav changes end */
+  }

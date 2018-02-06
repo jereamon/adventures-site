@@ -1,0 +1,226 @@
+/* Universal Selectors */
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    font-family: "Montserrat";
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: rgba(26, 50, 73, 0.1);
+  }
+
+  h1 {
+    font-weight: normal;
+  }
+
+  p {
+    margin: 0 0 25px 0;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgb(150, 150, 150);
+    border-radius: 3px;
+  }
+/* Universal Selectors End */
+
+/* Nav Portion */
+  nav {
+    background: #1A3249;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  nav a {
+    border: solid grey 1px;
+    border-radius: 3px;
+    color: white;
+    padding: 7.5px 15px;
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    background: rgb(68, 109, 150);
+  }
+
+  nav ul {
+    height: 100%;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    width: 49.5%;
+  }
+
+  nav li {
+    display: inline-block;
+    height: 100%;
+    margin: 16px 2% 0;
+  }
+
+  .brand {
+    border: none;
+    border-radius: none;
+    color: white;
+    float: left;
+    font-size: 1.5rem;
+    margin: 10px 0 0 8.25%;
+    padding: 0;
+  }
+
+  .brand:hover {
+    background: none;
+  }
+/* End Nav Portion */
+
+/* Header Area */
+  .para-img {
+    /* Parallax image. only one so far in header. */
+    background-image: url('story-1-images/sunset-tree.jpg');
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    height: 800px;
+    width: 100%;
+  }
+
+  .full-container {
+    /* A full width container. Overflow auto so margins don't spill out of parent */
+    overflow: hidden;
+    color: white;
+    margin: 50px 0 120px;
+  }
+
+  .eighty-container {
+    /* Was going to be 66% width... Prefer 85%... */
+    margin: 120px auto;
+    width: 85%;
+  }
+
+  .eighty-container h1 {
+    text-shadow: 0px 0px 10px rgba(150, 150, 150, 1), 0px 0px 2px rgba(50, 50, 50, 1);
+    text-align: center;
+    font-size: 4rem;
+    margin: 200px 0 0;
+  }
+
+  .eighty-container p {
+    /* Text shadow is cancelled on p's in .content p */
+    text-shadow: 0px 0px 2px rgba(50, 50, 50, 1);
+    font-size: 2rem;
+  }
+
+  .sixty-container {
+    margin: 0 auto;
+    width: 66%;
+  }
+
+  .header-content {
+    /* To position the p in the header */
+    margin: 60px auto 0;
+    text-align: center;
+    width: 50%;
+  }
+/* End Header Area */
+
+/* Content */
+  .content {
+    /* Outer container for individual content divs */
+    align-items: center;
+    display: flex;
+  }
+
+  .content img {
+    border-radius: 3px;
+    max-width: 100%;
+    box-shadow: 0px 1px 5px 1px rgba(0,0,0,0.25);
+  }
+
+  .content video {
+    border-radius: 3px;
+    max-width: 100%;
+    box-shadow: 0px 1px 5px 1px rgba(0,0,0,0.25);
+  }
+
+  .content p {
+    font-size: 1.5rem;
+    text-shadow: none;
+  }
+
+  .flex-img {
+    /* To go w/in .content w/image and text side by side */
+    flex: 2;
+    padding: 0 10px;
+  }
+
+  .flex-text {
+    /* Same as flex-img but for text */
+    flex: 1;
+    padding: 0 10px;
+  }
+
+  .full-width-image {
+    /* Div for that glorious full width image */
+    margin: 40px 0;
+    text-align: center;
+  }
+
+  .full-width-image img {
+    /* uh yeah... */
+    margin: 0;
+    width: 100%;
+  }
+
+  .gallery-container {
+    margin: 120px auto 40px;
+    width: 66%;
+  }
+
+  .gallery-container img {
+    box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.25);
+    transition: 200ms;
+    width: 100%;
+  }
+
+  .gallery-image-shift {
+    animation: image-shift;
+    animation-duration: 1s;
+  }
+
+  @keyframes image-shift {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+
+  .four-circles {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px auto;
+    max-width: 66%;
+  }
+
+  .circle {
+    border: 2px solid rgba(26, 50, 73, 0.219);
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    transition: 200ms;
+  }
+
+  .circle-selected {
+    background-color: #1A3249;
+  }
+
+  .under-gallery-text {
+    text-align: center;
+  }
