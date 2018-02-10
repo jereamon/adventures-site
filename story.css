@@ -84,16 +84,6 @@
 /* End Nav Portion */
 
 /* Header Area */
-  .para-img {
-    /* Parallax image. only one so far in header. */
-    background-image: url('story-1-images/sunset-tree.jpg');
-    background-size: cover;
-    background-position: top;
-    background-attachment: fixed;
-    height: 800px;
-    width: 100%;
-  }
-
   .full-container {
     /* A full width container. Overflow auto so margins don't spill out of parent */
     overflow: hidden;
@@ -224,3 +214,82 @@
   .under-gallery-text {
     text-align: center;
   }
+
+/* Media Queries Start */
+  @media (max-width:800px) {
+    body {
+      background-image: url('about-photos/me-lookout-portrait.jpg');
+    }
+
+    ::-webkit-scrollbar {
+      width: 0;
+    }
+
+    /* HELLA NAV CHANGES */
+      .burger-container {
+        height: 50px;
+        position: fixed;
+        right: 8.25%;
+        top: 5px;
+      }
+
+      .bar1, .bar2, .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: rgba(255, 255, 255, 0.637);
+        margin: 6px 0;
+        transition: 0.4s;
+      }
+
+      .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-9px, 6px);
+      }
+
+      .change .bar2 {opacity: 0;}
+
+      .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
+      }
+
+      nav {
+        width: 100%;
+      }
+
+      nav ul {
+        display: block;
+        height: 0;
+        margin: 50px 0 0;
+        overflow: hidden;
+        position: fixed;
+        right: 0;
+        transition: 330ms;
+        width: 100%;
+      }
+
+      nav li {
+        align-items: center;
+        background-color: black;
+        border-top: solid white 1px;
+        display: flex;
+        justify-content: flex-end;
+        height: 50px;
+        margin: 0;
+        text-align: right;
+        width: 100%;
+      }
+
+      nav a {
+        border: none;
+        border-radius: 0;
+        letter-spacing: 3px;
+      }
+
+      .nav-open {
+        /* Class applied in js file to show nav */
+        height: 150px;
+      }
+    /* Nav changes end */
+  }
+/* Media Queries End */

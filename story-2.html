@@ -5,14 +5,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Redwoods and Northern California</title>
+  <title>Olympic National Park</title>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <!-- Story.css contains css used across all 'story' pages. Each page then has
+    their own 'story-#.css' for story-page specific css.
+  -->
   <link rel="stylesheet" href="story.css">
+  <link rel="stylesheet" href="story-2.css">
 </head>
 
 <body>
   <nav>
     <a href="index.html" class="brand">Jroam</a>
+    <div class="burger-container">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
     <ul>
       <li>
         <a href="index.html">Home</a>
@@ -26,8 +35,14 @@
     </ul>
   </nav>
 
+  <div class="full-container para-img">
+    <div class="eighty-container">
+      <h1 class="header">Olympic National Park</h1>
+    </div>
+  </div>
 
   <script src="story.js"></script>
+  <script src='burger-collapse.js'></script>
 </body>
 
 </html>

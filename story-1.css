@@ -1,0 +1,9 @@
+.para-img {
+  /* Parallax image. only one so far in header. */
+  background-image: url('story-1-images/sunset-tree.jpg');
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+  height: 800px;
+  width: 100%;
+}

@@ -1,3 +1,5 @@
+// Currently this is all to set up 'gallery' functionality on individual story pages
+
 const allCircles = document.querySelectorAll(".circle");
 
 // Retrieve divs that contains all gallery elements and divs that contains img in gallery
