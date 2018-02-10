@@ -1,113 +1,121 @@
-// Currently this is all to set up 'gallery' functionality on individual story pages
+// Gallery Functionality
+  const allCircles = document.querySelectorAll(".circle");
 
-const allCircles = document.querySelectorAll(".circle");
+  // Retrieve divs that contains all gallery elements and divs that contains img in gallery
+  const gallery = document.querySelectorAll('.gallery-container');
+  const galImageContainer = document.querySelectorAll('.gallery-image-container');
 
-// Retrieve divs that contains all gallery elements and divs that contains img in gallery
-const gallery = document.querySelectorAll('.gallery-container');
-const galImageContainer = document.querySelectorAll('.gallery-image-container');
+  // Set specific height of gallery container and image container based on the height
+  // they loaded at so that everything will stay in place when the image is momentarily removed.
+  for (let i = 0; i < gallery.length; i++) {
+    let galHeight = gallery[i].offsetHeight;
+    gallery[i].style.height = galHeight.toString() + 'px';
+  }
 
-// Set specific height of gallery container and image container based on the height
-// they loaded at so that everything will stay in place when the image is momentarily removed.
-for (let i = 0; i < gallery.length; i++) {
-  let galHeight = gallery[i].offsetHeight;
-  gallery[i].style.height = galHeight.toString() + 'px';
-}
-
-for (let i = 0; i < galImageContainer.length; i++) {
-  let galImageHeight = galImageContainer[i].offsetHeight;
-  galImageContainer[i].style.height = galImageHeight.toString() + 'px';
-}
-
+  for (let i = 0; i < galImageContainer.length; i++) {
+    let galImageHeight = galImageContainer[i].offsetHeight;
+    galImageContainer[i].style.height = galImageHeight.toString() + 'px';
+  }
 
 
-// Adds a click event listener to every 'circle' on the page
-allCircles.forEach(function (circle) {
-  // Add click listener to each circle
-  circle.addEventListener('click', function () {
-    // Create html collection of children to clear only siblings of .circle-selected
-    siblingCircles = circle.parentElement.children;
 
+  // Adds a click event listener to every 'circle' on the page
+  allCircles.forEach(function (circle) {
+    // Add click listener to each circle
+    circle.addEventListener('click', function () {
+      // Create html collection of children to clear only siblings of .circle-selected
+      siblingCircles = circle.parentElement.children;
+
+      for (let i = 0; i < siblingCircles.length; i++) {
+        siblingCircles[i].classList.remove('circle-selected');
+      }
+      // Toggle .circle-selected on clicked circle
+      circle.classList.toggle("circle-selected");
+
+      changeImage(circle.parentElement);
+    })
+  });
+
+  // Responds to a 'circle' click and sends info to appropriate gallery function
+  function changeImage(parentEl) {
+    // Get object of circle siblings
+    siblingCircles = parentEl.children;
+
+    // determine which circle is selected, determine which gallery the circle is in
+    // pass parentEl and index to appropriate gallery function
     for (let i = 0; i < siblingCircles.length; i++) {
-      siblingCircles[i].classList.remove('circle-selected');
-    }
-    // Toggle .circle-selected on clicked circle
-    circle.classList.toggle("circle-selected");
-
-    changeImage(circle.parentElement);
-  })
-});
-
-// Responds to a 'circle' click and sends info to appropriate gallery function
-function changeImage(parentEl) {
-  // Get object of circle siblings
-  siblingCircles = parentEl.children;
-
-  // determine which circle is selected, determine which gallery the circle is in
-  // pass parentEl and index to appropriate gallery function
-  for (let i = 0; i < siblingCircles.length; i++) {
-    if (siblingCircles[i].classList.contains('circle-selected')) {
-      if (parentEl.id === 'gal-1') {
-        galOne(parentEl, i);
-      } else if (parentEl.id === 'gal-2') {
-        galTwo(parentEl, i);
+      if (siblingCircles[i].classList.contains('circle-selected')) {
+        if (parentEl.id === 'gal-1') {
+          galOne(parentEl, i);
+        } else if (parentEl.id === 'gal-2') {
+          galTwo(parentEl, i);
+        };
       };
     };
+
+
   };
 
+  function galOne(parentEl, index) {
+    // Get the image container that has been selected and the image w/in that container
+    const imageContainer = parentEl.previousElementSibling;
+    const image = imageContainer.firstElementChild;
 
-};
+    // Array of img src's
+    galOneImages = [
+      "story-1-images/gal-1/big-log.jpg",
+      "story-1-images/gal-1/falls-2.jpg",
+      "story-1-images/gal-1/three-birds.jpg",
+      "story-1-images/gal-1/just-trees.jpg"
+    ]
 
-function galOne(parentEl, index) {
-  // Get the image container that has been selected and the image w/in that container
-  const imageContainer = parentEl.previousElementSibling;
-  const image = imageContainer.firstElementChild;
+    // create new image element
+    const newImage = document.createElement('img');
+    // Set new image element src to appropriate index from galOneImages array
+    newImage.setAttribute('src', galOneImages[index - 1]);
+    // Apply fade in animation class so it will start from beginning
+    newImage.classList.add('gallery-image-shift');
 
-  // Array of img src's
-  galOneImages = [
-    "story-1-images/gal-1/big-log.jpg",
-    "story-1-images/gal-1/falls-2.jpg",
-    "story-1-images/gal-1/three-birds.jpg",
-    "story-1-images/gal-1/just-trees.jpg"
-  ]
+    // Remove current image. I thought this may be faster to put it after creating the
+    // replacement image, but it probably doesn't matter.
+    image.remove();
 
-  // create new image element
-  const newImage = document.createElement('img');
-  // Set new image element src to appropriate index from galOneImages array
-  newImage.setAttribute('src', galOneImages[index - 1]);
-  // Apply fade in animation class so it will start from beginning
-  newImage.classList.add('gallery-image-shift');
+    // append new image to imageContainer div
+    imageContainer.appendChild(newImage);
+  }
 
-  // Remove current image. I thought this may be faster to put it after creating the
-  // replacement image, but it probably doesn't matter.
-  image.remove();
+  function galTwo(parentEl, index) {
+    // Get the image container that has been selected and the image w/in that container
+    const imageContainer = parentEl.previousElementSibling;
+    const image = imageContainer.firstElementChild;
 
-  // append new image to imageContainer div
-  imageContainer.appendChild(newImage);
-}
+    // Array of img src's
+    galOneImages = [
+      "story-1-images/gal-2/garden-arch.jpg",
+      "story-1-images/gal-2/garden-path.jpg",
+      "story-1-images/gal-2/garden-birds.jpg",
+    ]
 
-function galTwo(parentEl, index) {
-  // Get the image container that has been selected and the image w/in that container
-  const imageContainer = parentEl.previousElementSibling;
-  const image = imageContainer.firstElementChild;
+    // create new image element
+    const newImage = document.createElement('img');
+    // Set new image element src to appropriate index from galOneImages array
+    newImage.setAttribute('src', galOneImages[index - 1]);
+    // Apply fade in animation class so it will start from beginning
+    newImage.classList.add('gallery-image-shift');
 
-  // Array of img src's
-  galOneImages = [
-    "story-1-images/gal-2/garden-arch.jpg",
-    "story-1-images/gal-2/garden-path.jpg",
-    "story-1-images/gal-2/garden-birds.jpg",
-  ]
+    // Remove current image. I thought this may be faster to put it after creating the
+    // replacement image, but it probably doesn't matter.
+    image.remove();
 
-  // create new image element
-  const newImage = document.createElement('img');
-  // Set new image element src to appropriate index from galOneImages array
-  newImage.setAttribute('src', galOneImages[index - 1]);
-  // Apply fade in animation class so it will start from beginning
-  newImage.classList.add('gallery-image-shift');
+    // append new image to imageContainer div
+    imageContainer.appendChild(newImage);
+  }
+// Gallery Functionality Ends
 
-  // Remove current image. I thought this may be faster to put it after creating the
-  // replacement image, but it probably doesn't matter.
-  image.remove();
+// To top button functionality
+  const toTopButton = document.querySelector('.to-top-button a')
 
-  // append new image to imageContainer div
-  imageContainer.appendChild(newImage);
-}
+  toTopButton.addEventListener('click', function() {
+    let currentYOffest = window.pageYOffset;
+    console.log(currentYOffest);
+  })

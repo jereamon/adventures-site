@@ -83,6 +83,35 @@
   }
 /* End Nav Portion */
 
+/* To Top Button */
+  .to-top-button {
+    z-index: 1;
+  }
+
+  .to-top-button a {
+    bottom: 10px;
+    color: rgb(73, 136, 195);
+    position: fixed;
+    right: 10px;
+    text-align: center;
+    text-decoration: none;
+    z-index: 1;
+  }
+
+  .to-top-button a:active {
+    color: #722872;
+    -webkit-tap-highlight-color: #1A3249;
+  }
+
+  .to-top-button a:hover {
+    color: #1A3249;
+  }
+
+  .to-top-button i {
+    font-size: 50px;
+  }
+/* To Top Button Styles End */
+
 /* Header Area */
   .full-container {
     /* A full width container. Overflow auto so margins don't spill out of parent */
@@ -217,10 +246,6 @@
 
 /* Media Queries Start */
   @media (max-width:800px) {
-    body {
-      background-image: url('about-photos/me-lookout-portrait.jpg');
-    }
-
     ::-webkit-scrollbar {
       width: 0;
     }

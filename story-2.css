@@ -1,9 +1,16 @@
 .para-img {
   /* Parallax image. only one so far in header. */
-  background-image: url('story-2-images/rock-stack-log.jpg');
+  background-image: url('story-2-images/snail-leaf-2.jpg');
   background-size: cover;
-  background-position: top;
+  background-position: bottom;
   background-attachment: fixed;
   height: 800px;
   width: 100%;
+}
+
+@media (max-width:800px) {
+  .para-img {
+    background-image: url('story-2-images/snail-leaf-portrait.jpg');
+    height: 400px;
+  }
 }
