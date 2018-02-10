@@ -71,7 +71,7 @@ html, body {
 
 /* Hero Portion */
   .hero-image {
-    background-image: url("crescent-city-beach-2-2.jpg");
+    background-image: url("crescent-city-beach.jpg");
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
@@ -114,7 +114,7 @@ html, body {
 
 /* Left Container & Right Container */
   .left-container {
-    background-image: url("oly-park-bridge-home-3.jpg");
+    background-image: url("oly-park-bridge-home.jpg");
     background-position: center;
     background-size: cover;
     display: inline-block;
@@ -134,7 +134,7 @@ html, body {
   }
 
   .right-container {
-    background-image: url("north-cascades-home-3.jpg");
+    background-image: url("north-cascades-home.jpg");
     background-position: top center;
     background-size: cover;
     height: 100%;
