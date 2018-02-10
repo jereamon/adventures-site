@@ -215,6 +215,7 @@ h1 {
       nav a {
         border: none;
         border-radius: 0;
+        letter-spacing: 3px;
       }
 
       .nav-open {
