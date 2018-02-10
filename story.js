@@ -113,9 +113,27 @@
 // Gallery Functionality Ends
 
 // To top button functionality
-  const toTopButton = document.querySelector('.to-top-button a')
+const toTopButton = document.querySelector('.to-top-button i');
 
-  toTopButton.addEventListener('click', function() {
-    let currentYOffest = window.pageYOffset;
-    console.log(currentYOffest);
-  })
+toTopButton.addEventListener('click', function() {
+  var startY = window.pageYOffset;
+  var stopY = 0;
+  if (startY < 100) {
+      scrollTo(0, stopY);
+  }
+
+  var speed = Math.round(startY / 100);
+  if (speed >= 20) speed = 20;
+
+  var step = Math.round(startY / 25);
+  var leapY = startY - step;
+  var timer = 0;
+  for ( var i=startY; i>stopY; i-=step ) {
+    setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+    leapY -= step;
+    if (leapY < stopY) {
+      leapY = stopY
+    };
+    timer++;
+  }
+});

@@ -88,7 +88,7 @@
     z-index: 1;
   }
 
-  .to-top-button a {
+  .to-top-button i {
     bottom: 10px;
     color: rgb(73, 136, 195);
     position: fixed;
@@ -98,12 +98,12 @@
     z-index: 1;
   }
 
-  .to-top-button a:active {
+  .to-top-button i:active {
     color: #722872;
     -webkit-tap-highlight-color: #1A3249;
   }
 
-  .to-top-button a:hover {
+  .to-top-button i:hover {
     color: #1A3249;
   }
 
