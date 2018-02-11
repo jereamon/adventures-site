@@ -1,4 +1,6 @@
 // Gallery Functionality
+// To add a new gallery create the function for that gallery based off the other gallery
+// functions and add that gallery id to the sendInfoToGallery for loop.
 
 const allCircles = document.querySelectorAll(".circle");
 
@@ -52,10 +54,31 @@ function sendInfoToGallery(parentEl) {
         oneGalTwo(parentEl, i);
       } else if (parentEl.id === '2-gal-1') {
         twoGalOne(parentEl, i);
-      };
+      } else if (parentEl.id === '2-gal-2') {
+        twoGalTwo(parentEl, i);
+      }
     };
   };
 };
+
+function swapImage(imageContainer, image, imageSrc) {
+  // Swap out the current image element with a new one so that fade in animation
+  // will always start over.
+
+  // create new image element
+  const newImage = document.createElement('img');
+  // Set new image element src to appropriate index from galOneImages array
+  newImage.setAttribute('src', imageSrc);
+  // Apply fade in animation class so it will start from beginning
+  newImage.classList.add('gallery-image-shift');
+
+  // Remove current image. I thought this may be faster to put it after creating the
+  // replacement image, but it probably doesn't matter.
+  image.remove();
+
+  // append new image to imageContainer div
+  imageContainer.appendChild(newImage);
+}
 
 
 
@@ -65,26 +88,15 @@ function oneGalOne(parentEl, index) {
   const image = imageContainer.firstElementChild;
 
   // Array of img src's
-  const galOneImages = [
+  const images = [
     "story-1-images/gal-1/big-log.jpg",
     "story-1-images/gal-1/falls-2.jpg",
     "story-1-images/gal-1/three-birds.jpg",
     "story-1-images/gal-1/just-trees.jpg"
   ]
 
-  // create new image element
-  const newImage = document.createElement('img');
-  // Set new image element src to appropriate index from galOneImages array
-  newImage.setAttribute('src', galOneImages[index - 1]);
-  // Apply fade in animation class so it will start from beginning
-  newImage.classList.add('gallery-image-shift');
-
-  // Remove current image. I thought this may be faster to put it after creating the
-  // replacement image, but it probably doesn't matter.
-  image.remove();
-
-  // append new image to imageContainer div
-  imageContainer.appendChild(newImage);
+  let imageSrc = images[index - 1];
+  swapImage(imageContainer, image, imageSrc);
 }
 
 function oneGalTwo(parentEl, index) {
@@ -93,25 +105,14 @@ function oneGalTwo(parentEl, index) {
   const image = imageContainer.firstElementChild;
 
   // Array of img src's
-  const galOneImages = [
+  const images = [
     "story-1-images/gal-2/garden-arch.jpg",
     "story-1-images/gal-2/garden-path.jpg",
     "story-1-images/gal-2/garden-birds.jpg",
   ]
 
-  // create new image element
-  const newImage = document.createElement('img');
-  // Set new image element src to appropriate index from galOneImages array
-  newImage.setAttribute('src', galOneImages[index - 1]);
-  // Apply fade in animation class so it will start from beginning
-  newImage.classList.add('gallery-image-shift');
-
-  // Remove current image. I thought this may be faster to put it after creating the
-  // replacement image, but it probably doesn't matter.
-  image.remove();
-
-  // append new image to imageContainer div
-  imageContainer.appendChild(newImage);
+  let imageSrc = images[index - 1];
+  swapImage(imageContainer, image, imageSrc);
 }
 
 function twoGalOne(parentEl, index) {
@@ -120,26 +121,30 @@ function twoGalOne(parentEl, index) {
   const image = imageContainer.firstElementChild;
 
   // Array of img src's
-  const twoGalOneImages = [
+  const images = [
     "story-2-images/gal-1/stack-and-river.jpg",
     "story-2-images/gal-1/step-trail.jpg",
     "story-2-images/gal-1/unknown-creek.jpg",
     "story-2-images/gal-1/kick-back.jpg"
   ];
 
-  // create new image element
-  const newImage = document.createElement('img');
-  // Set new image element src to appropriate index from galOneImages array
-  newImage.setAttribute('src', twoGalOneImages[index - 1]);
-  // Apply fade in animation class so it will start from beginning
-  newImage.classList.add('gallery-image-shift');
+  let imageSrc = images[index - 1];
+  swapImage(imageContainer, image, imageSrc);
+}
 
-  // Remove current image. I thought this may be faster to put it after creating the
-  // replacement image, but it probably doesn't matter.
-  image.remove();
+function twoGalTwo(parentEl, index) {
+  const imageContainer = parentEl.previousElementSibling;
+  const image = imageContainer.firstElementChild;
 
-  // append new image to imageContainer div
-  imageContainer.appendChild(newImage);
+  const images = [
+    'story-2-images/gal-2/beach-and-trees.jpg',
+    'story-2-images/gal-2/beach-sunset.jpg',
+    'story-2-images/gal-2/me-sunset.jpg',
+    'story-2-images/gal-2/crow-sunset.jpg'
+  ];
+
+  let imageSrc = images[index - 1];
+  swapImage(imageContainer, image, imageSrc);
 }
 
 // Gallery Functionality Ends
