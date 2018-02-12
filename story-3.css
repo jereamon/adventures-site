@@ -5,5 +5,23 @@
   background-position: center;
   background-attachment: fixed;
   height: 800px;
+  margin: 0;
   width: 100%;
+}
+
+.header {
+  /* Overrides .header in story.css */
+  font-size: 7rem;
+  margin: 300px 0 0;
+}
+
+.header-content {
+  /* Overrides .header-content in stories.css */
+  font-size: 1.75rem;
+  margin: 20px auto 0;
+}
+
+.special-gal {
+  /* Overrides image gallery width in stories.css so I can fit 2x3 aspect images. */
+  width: 50%;
 }

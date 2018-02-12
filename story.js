@@ -56,6 +56,10 @@ function sendInfoToGallery(parentEl) {
         twoGalOne(parentEl, i);
       } else if (parentEl.id === '2-gal-2') {
         twoGalTwo(parentEl, i);
+      } else if (parentEl.id === '3-gal-1') {
+        threeGalOne(parentEl, i);
+      } else if (parentEl.id === '3-gal-2') {
+        threeGalTwo(parentEl, i);
       }
     };
   };
@@ -142,6 +146,36 @@ function twoGalTwo(parentEl, index) {
     'story-2-images/gal-2/me-sunset.jpg',
     'story-2-images/gal-2/crow-sunset.jpg'
   ];
+
+  let imageSrc = images[index - 1];
+  swapImage(imageContainer, image, imageSrc);
+}
+
+function threeGalOne(parentEl, index) {
+  const imageContainer = parentEl.previousElementSibling;
+  const image = imageContainer.firstElementChild;
+
+  const images = [
+    'story-3-images/gal-1/goat-face.jpg',
+    'story-3-images/gal-1/little-goat.jpg',
+    'story-3-images/gal-1/snow-goat.jpg',
+    'story-3-images/gal-1/side-goat.jpg',
+  ]
+
+  let imageSrc = images[index - 1];
+  swapImage(imageContainer, image, imageSrc);
+}
+
+function threeGalTwo(parentEl, index) {
+  const imageContainer = parentEl.previousElementSibling;
+  const image = imageContainer.firstElementChild;
+
+  const images = [
+    'story-3-images/gal-2/breakfast.jpg',
+    'story-3-images/gal-2/hat.jpg',
+    'story-3-images/gal-2/railing.jpg',
+    'story-3-images/gal-2/rock-stack.jpg',
+  ]
 
   let imageSrc = images[index - 1];
   swapImage(imageContainer, image, imageSrc);
