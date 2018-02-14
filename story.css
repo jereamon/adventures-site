@@ -11,6 +11,7 @@
 
   body {
     background-color: rgba(26, 50, 73, 0.1);
+    height: 100%;
   }
 
   h1 {
@@ -85,6 +86,8 @@
 
 /* To Top Button */
   .to-top-button {
+    opacity: 0;
+    transition: 500ms;
     z-index: 1;
   }
 
@@ -117,7 +120,7 @@
     /* A full width container. Overflow auto so margins don't spill out of parent */
     overflow: hidden;
     color: white;
-    margin: 50px 0 120px;
+    margin: 0 0 120px;
   }
 
   .eighty-container {
@@ -243,6 +246,7 @@
   .under-gallery-text {
     text-align: center;
   }
+/* Content ENDS */
 
 /* Media Queries Start */
   @media (max-width:800px) {
@@ -316,5 +320,72 @@
         height: 150px;
       }
     /* Nav changes end */
+
+    .full-container {
+      margin: 0 0 40px;
+    }
+
+    .header {
+      font-size: 2.75rem;
+    }
+
+    .eighty-container p {
+      font-size: 1.5rem;
+    }
+
+    .content {
+      flex-wrap: wrap;
+    }
+
+    .content p {
+      font-size: 1.25rem;
+    }
+
+    .sixty-container {
+      width: 82.5%;
+    }
+
+    .header-content {
+      width: 82.5%;
+    }
+
+    .flex-img {
+      flex-basis: 100%;
+    }
+
+    .flex-text {
+      flex-basis: 100%;
+      text-align: center;
+    }
+
+    .gallery-container {
+      width: 100%;
+    }
+
+    .four-circles span {
+      display: none;
+    }
+  }
+
+  @media (max-width:600px) {
+    .header {
+      font-size: 1.5rem;
+    }
+
+    .eighty-container {
+      width: 98%;
+    }
+
+    .eighty-container p {
+      font-size: 1rem;
+    }
+
+    .content p {
+      font-size: 1rem;
+    }
+
+    .four-circles {
+      max-width: 82.5%
+    }
   }
 /* Media Queries End */

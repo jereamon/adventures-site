@@ -186,8 +186,20 @@ function threeGalTwo(parentEl, index) {
 
 
 // To top button functionality
+const toTopButtonContainer = document.querySelector('.to-top-button');
 const toTopButton = document.querySelector('.to-top-button i');
 
+// button will disappear at top of page and appear when pageYOffset is greater than 250px
+window.addEventListener('scroll', function () {
+  let pageHeight = window.pageYOffset;
+  if (pageHeight > 250) {
+    toTopButtonContainer.style.opacity = '1';
+  } else {
+    toTopButtonContainer.style.opacity = '0';
+  }
+});
+
+// Adds smooth scroll to top functionality
 toTopButton.addEventListener('click', function () {
   var startY = window.pageYOffset;
   var stopY = 0;
@@ -202,7 +214,7 @@ toTopButton.addEventListener('click', function () {
   var leapY = startY - step;
   var timer = 0;
   for (var i = startY; i > stopY; i -= step) {
-    setTimeout("window.scrollTo(0, " + leapY + ")", timer * speed);
+    setTimeout((function (leapY) { return function () { window.scrollTo(0, leapY)}; })(leapY), timer * speed);
     leapY -= step;
     if (leapY < stopY) {
       leapY = stopY

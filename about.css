@@ -13,7 +13,8 @@ body {
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
-  /* height: 100%; */
+  position: absolute;
+  width: 100%;
 }
 
 h1 {
@@ -112,7 +113,7 @@ h1 {
   .container p {
     font-size: 1.1rem;
     letter-spacing: 1px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5)
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5), 0px 0px 10px rgba(0, 0, 0, 0.33);
   }
 /* Content Ends */
 
@@ -120,7 +121,6 @@ h1 {
   @media (max-width:1800px) {
     .content-container {
       grid-row-gap: 60px;
-      /* margin: 50px 0 0; */
     }
 
     .container h1 {
@@ -135,7 +135,6 @@ h1 {
   @media (max-width:1100px) {
     .content-container {
       margin: 50px 0 0;
-      /* grid-template-rows: 300px 300px; */
       grid-row-gap: 0;
     }
 
@@ -145,6 +144,32 @@ h1 {
 
     .container h2 {
       font-size: 1.25rem;
+    }
+  }
+
+  @media (max-width:1100px) and (min-width:600px) and (max-height:1500px) and (min-height:900px) {
+    body {
+      background-image: url('about-photos/me-lookout-portrait.jpg');
+    }
+
+    .content-container {
+      margin: 16.5% 0 0 25px;
+    }
+
+    .container {
+      max-width: 600px;
+    }
+
+    .container h1 {
+      font-size: 2.75rem
+    }
+
+    .container h2 {
+      font-size: 2.5rem;
+    }
+
+    .container p {
+      font-size: 1.75rem;
     }
   }
 
@@ -223,4 +248,44 @@ h1 {
         height: 150px;
       }
     /* Nav changes end */
+
+    .content-container {
+      margin: 16.5% 0 0 40px;
+    }
+
+    .content-container h1 {
+      font-size: 2.25rem;
+    }
+
+    .content-container h2 {
+      font-size: 2rem;
+    }
+
+    .content-container p {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width:600px) {
+    body {
+      background-image: url('about-photos/lookout-mobile.jpg');
+    }
+
+    .content-container {
+      margin: 75px auto 0;
+      width: 82.5%;
+
+    }
+
+    .content-container h1 {
+      font-size: 1.5rem;
+    }
+
+    .content-container h2 {
+      font-size: 1.25rem;
+    }
+
+    .content-container p {
+      font-size: 0.9rem;
+    }
   }
