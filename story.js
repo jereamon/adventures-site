@@ -10,33 +10,33 @@ const galImageContainer = document.querySelectorAll('.gallery-image-container');
 
 // Set specific height of gallery container and image container based on the height
 // they loaded at so that everything will stay in place when the image is momentarily removed.
-var ready = function ( fn ) {
+// var ready = function ( fn ) {
 
-  // Sanity check
-  if ( typeof fn !== 'function' ) return;
+//   // Sanity check
+//   if ( typeof fn !== 'function' ) return;
 
-  // If document is already loaded, run method
-  if ( document.readyState === 'complete'  ) {
-      return fn();
-  }
+//   // If document is already loaded, run method
+//   if ( document.readyState === 'complete'  ) {
+//       return fn();
+//   }
 
-  // Otherwise, wait until document is loaded
-  document.addEventListener( 'DOMContentLoaded', fn, false );
+//   // Otherwise, wait until document is loaded
+//   document.addEventListener( 'DOMContentLoaded', fn, false );
 
-};
+// };
 
-// Example
-ready(function() {
-  for (let i = 0; i < gallery.length; i++) {
-    let galHeight = gallery[i].offsetHeight;
-    gallery[i].style.height = galHeight.toString() + 'px';
-  }
+// // Example
+// ready(function() {
+//   for (let i = 0; i < gallery.length; i++) {
+//     let galHeight = gallery[i].offsetHeight;
+//     gallery[i].style.height = galHeight.toString() + 'px';
+//   }
 
-  for (let i = 0; i < galImageContainer.length; i++) {
-    let galImageHeight = galImageContainer[i].offsetHeight;
-    galImageContainer[i].style.height = galImageHeight.toString() + 'px';
-  }
-});
+//   for (let i = 0; i < galImageContainer.length; i++) {
+//     let galImageHeight = galImageContainer[i].offsetHeight;
+//     galImageContainer[i].style.height = galImageHeight.toString() + 'px';
+//   }
+// });
 
 
 
