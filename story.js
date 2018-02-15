@@ -10,19 +10,17 @@ const galImageContainer = document.querySelectorAll('.gallery-image-container');
 
 // Set specific height of gallery container and image container based on the height
 // they loaded at so that everything will stay in place when the image is momentarily removed.
-// document.addEventListener('DOMContentLoaded', function () {
-//   for (let i = 0; i < gallery.length; i++) {
-//     let galHeight = gallery[i].offsetHeight;
-//     gallery[i].style.height = galHeight.toString() + 'px';
-//   }
+setTimeout(() => {
+  for (let i = 0; i < gallery.length; i++) {
+    let galHeight = gallery[i].offsetHeight;
+    gallery[i].style.height = galHeight.toString() + 'px';
+  }
 
-//   for (let i = 0; i < galImageContainer.length; i++) {
-//     let galImageHeight = galImageContainer[i].offsetHeight;
-//     galImageContainer[i].style.height = galImageHeight.toString() + 'px';
-//   }
-// })
-
-
+  for (let i = 0; i < galImageContainer.length; i++) {
+    let galImageHeight = galImageContainer[i].offsetHeight;
+    galImageContainer[i].style.height = galImageHeight.toString() + 'px';
+  }
+}, 4000);
 
 
 // Adds a click event listener to every 'circle' on the page
