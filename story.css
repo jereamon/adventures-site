@@ -102,11 +102,13 @@
   }
 
   .to-top-button i:active {
-    color: #722872;
+    opacity: 1;
+    color: #1A3249;
     -webkit-tap-highlight-color: #1A3249;
   }
 
   .to-top-button i:hover {
+    opacity: 1;
     color: #1A3249;
   }
 
